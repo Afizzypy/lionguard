@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel | LionGuard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e8f5e9, #e3f2fd);
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      color: #1b5e20;
+    }
+
+    .btn {
+      margin: 15px;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #1b5e20, #4caf50);
+    }
+
+    .log-box {
+      width: 80%;
+      margin: 30px auto;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid #4caf50;
+      max-height: 300px;
+      overflow-y: scroll;
+      text-align: left;
+      font-family: monospace;
+      font-size: 14px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧑‍💼 Admin Control Panel</h1>
+  <p>Monitor system activity and access key tools</p>
+
+  <a href="map.html"><button class="btn">📍 Open Campus Map</button></a>
+  <button class="btn" onclick="alert('Run motion_detector.py manually to start surveillance')">🎥 Start Surveillance</button>
+
+  <h3>📋 Motion Detection Log</h3>
+  <div class="log-box" id="logBox">Loading log...</div>
+
+  <script>
+    fetch('motion_log.txt')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('logBox').textContent = data || "No motion detected yet.";
+      })
+      .catch(() => {
+        document.getElementById('logBox').textContent = "Unable to load log.";
+      });
+  </script>
+
+</body>
+</html>

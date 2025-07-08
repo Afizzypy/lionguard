@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Campus Map | LionGuard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fffde7, #e0f7fa);
+      text-align: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 36px;
+      color: #004d40;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      border: 3px solid #4db6ac;
+      border-radius: 15px;
+      width: 80%;
+      height: 450px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00acc1, #26c6da);
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00838f, #00acc1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🗺️ Campus Map & Building Guide</h1>
+  <p>Click a location to get quick directions</p>
+
+  <iframe 
+    src="https://www.google.com/maps?q=place_id:ChIJve35JtOfThAR2GRuMEh3duU&output=embed"
+    allowfullscreen="" loading="lazy">
+  </iframe>
+
+  <div>
+    <button class="btn" onclick="alert('Walk past the gate to reach the Admin Block')">🏛️ Admin Block</button>
+    <button class="btn" onclick="alert('Turn right to get to the Library')">📚 Library</button>
+    <button class="btn" onclick="alert('Behind the Library is the Science Lab')">🧪 Science Lab</button>
+    <button class="btn" onclick="alert('Hostels are to the left of the Admin Block')">🛏️ Hostel</button>
+    <button class="btn" onclick="alert('Follow road past Hostel to Cafeteria')">🍽️ Cafeteria</button>
+    <button class="btn" onclick="alert('Near Main Gate you\'ll find the Sports Complex')">🏀 Sports Complex</button>
+    <button class="btn" onclick="alert('Opposite Library is the Classroom Block')">🏫 Classroom Block</button>
+  </div>
+
+</body>
+</html>

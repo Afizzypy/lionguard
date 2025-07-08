@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LionGuard | UNN Smart Campus</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0ffe0, #f0fff9);
+      text-align: center;
+      padding: 40px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      height: 80px;
+      margin-right: 15px;
+    }
+
+    .logo-text {
+      font-size: 40px;
+      font-weight: bold;
+      color: #006600;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 20px;
+      padding: 18px 35px;
+      font-size: 18px;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #00cc66, #33ccff);
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #00994d, #1aa3cc);
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="lionguard_logo.png" alt="LionGuard Logo">
+    <div class="logo-text">LionGuard</div>
+  </div>
+  <div class="subtitle">UNN Smart Campus System for Navigation & Surveillance</div>
+
+  <!-- Buttons -->
+  <a href="map.html">
+    <button class="btn">🗺️ Campus Map & Guide</button>
+  </a>
+
+  <button class="btn" onclick="alert('Please run motion_detector.py in Python to start surveillance')">
+    🔴 Launch Surveillance
+  </button>
+
+  <a href="admin.html">
+    <button class="btn">🧑‍💼 Admin Panel</button>
+  </a>
+
+  <div class="footer">University of Nigeria, Nsukka — Built with ❤️ by Team LionGuard</div>
+
+</body>
+</html>

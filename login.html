@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login | LionGuard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff3e0, #ffe0b2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff8f00;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #ef6c00;
+    }
+    .toggle {
+      margin-top: -10px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>🔐 LionGuard Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <div class="toggle">
+      <input type="checkbox" onclick="togglePassword()"> Show Password
+    </div>
+    <button onclick="login()">Login</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <script>
+    // Multiple user login
+    const users = {
+      admin: 'lion123',
+      staff: 'staff456',
+      student: 'student789'
+    };
+
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      if (users[user] === pass) {
+        window.location.href = 'admin.html';
+      } else {
+        document.getElementById('error').innerText = 'Invalid username or password';
+      }
+    }
+
+    function togglePassword() {
+      const passField = document.getElementById('password');
+      passField.type = passField.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+
+</body>
+</html>
